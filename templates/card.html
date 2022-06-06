@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flashcards</title>
+</head>
+<body>
+<b>no</b>: {{ card.no }}<br>
+<b>name</b>: {{ card.name }}<br>
+<b>age</b>: {{ card.age }}<br>
+<b>tel</b>: {{ card.tel }}<br>
+<b>email</b>: {{ card.email }}<br>
+<p>
+    <hr>
+    {% if index < max_index %}
+    <button>
+        <a href="{{ url_for('card_view', index=index +1) }}"> Next card</a>
+    </button>
+      {% else %}
+    <button>
+        <a href="{{ url_for('card_view', index=index -1) }}"> Next card</a>
+    </button>
+     {% endif %}
+  <hr>
+     <a href="{{ url_for('welcome') }}"> Home</a>
+</p>
+</body>
+</html>
